@@ -43,7 +43,7 @@ public class Solution {
                 }
 
                 if (nums[i] + nums[l] + nums[r] == 0) {
-                    list.add(List.of(nums[i], nums[l], nums[r]));
+                    list.add(new ArrayList<>(Arrays.asList(nums[i], nums[l], nums[r])));
                     l++;
                     r--;
                 }
