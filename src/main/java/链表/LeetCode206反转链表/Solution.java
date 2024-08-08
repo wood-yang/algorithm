@@ -5,32 +5,26 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
+        ListNode pre = new ListNode(-1);
         Scanner scanner = new Scanner(System.in);
-        ListNode head = null;
-        int n = scanner.nextInt();
-        for (int i = 0; i < n; i++) {
-            ListNode node = null;
-            if (i == 0) {
-                node = new ListNode(scanner.nextInt());
-            } else {
-                node = new ListNode(scanner.nextInt(), head);
-            }
-            head = node;
+        int a = scanner.nextInt();
+        ListNode p = pre;
+        for (int i = 0; i < a; i++) {
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
-
-        ListNode ans = new Solution().reverseList(head);
-        System.out.println(ans);
+        ListNode listNode = new Solution().reverseList(pre.next);
+        System.out.println(listNode);
     }
 
     public ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode cur = head;
-        while (cur != null) {
-            pre = new ListNode(cur.val, pre);
-            cur = cur.next;
+        if (head == null || head.next == null) {
+            return head;
         }
-        return pre;
-
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
     }
 }
 
@@ -48,13 +42,5 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
     }
 }
