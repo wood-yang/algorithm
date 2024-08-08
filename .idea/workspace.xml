@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="add 之前的算法题">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update LeetCode160相交链表 修改了初始化链表的逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/双指针/lcr007三数之和/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/双指针/lcr007三数之和/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,7 @@
       <workItem from="1723078691235" duration="1098000" />
       <workItem from="1723079801744" duration="321000" />
       <workItem from="1723080565427" duration="1000" />
-      <workItem from="1723080647631" duration="6304000" />
+      <workItem from="1723080647631" duration="8130000" />
     </task>
     <task id="LOCAL-00001" summary="add 之前的算法题">
       <option name="closed" value="true" />
@@ -116,7 +114,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723080843257</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update 修改一些配置">
+      <option name="closed" value="true" />
+      <created>1723087797952</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723087797952</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update LeetCode160相交链表 修改了初始化链表的逻辑">
+      <option name="closed" value="true" />
+      <created>1723087863651</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723087863651</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,23 +138,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add 之前的算法题" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 之前的算法题" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode160相交链表/Ha.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode160相交链表/Ha.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="update 修改一些配置" />
+    <MESSAGE value="update LeetCode160相交链表 修改了初始化链表的逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="update LeetCode160相交链表 修改了初始化链表的逻辑" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
