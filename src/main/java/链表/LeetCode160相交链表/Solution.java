@@ -6,34 +6,36 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
+        ListNode preA = new ListNode(-1);
+        ListNode preB = new ListNode(-1);
+        ListNode preC = new ListNode(-1);
         Scanner scanner = new Scanner(System.in);
-        ListNode headA = null;
-        ListNode headB = null;
+
+        ListNode p;
+        p = preC;
         int c = scanner.nextInt();
         for (int i = 0; i < c; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            if (i == 0) {
-                headA = headB = node;
-            }
-            else {
-                node.next = headA;
-                headA = headB = node;
-            }
-        }
-        int a = scanner.nextInt();
-        for (int i = 0; i < a; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = headA;
-            headA = node;
-        }
-        int b = scanner.nextInt();
-        for (int i = 0; i < b; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = headB;
-            headB = node;
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
 
-        ListNode node = new Solution().getIntersectionNode(headA, headB);
+        p = preA;
+        int a = scanner.nextInt();
+        for (int i = 0; i < a; i++) {
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
+        }
+        p.next = preC.next;
+
+        p = preB;
+        int b = scanner.nextInt();
+        for (int i = 0; i < b; i++) {
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
+        }
+        p.next = preC.next;
+
+        ListNode node = new Solution().getIntersectionNode(preA.next, preB.next);
         System.out.println(node);
     }
 
@@ -44,20 +46,10 @@ public class Solution {
         ListNode pA = headA;
         ListNode pB = headB;
         while (pA != pB) {
-            if (pA == null) {
-                pA = headB;
-            }
-            else {
-               pA = pA.next;
-            }
-
-            if (pB == null) {
-                pB = headA;
-            }
-            else {
-                pB = pB.next;
-            }
+            pA = pA == null ? headB : pA.next;
+            pB = pB == null ? headA : pB.next;
         }
+
         return pA;
     }
 }
@@ -70,14 +62,6 @@ class ListNode {
     ListNode(int x) {
         val = x;
         next = null;
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
     }
 }
 
