@@ -11,30 +11,11 @@ public class Solution {
     }
 
     public int climbStairs(int n) {
-        int[][] a = new int[][]{{1, 1}, {1, 0}};
-        int[][] ans = pow(a, n);
-        return ans[1][0] + ans[1][1];
-    }
-
-    private int[][] pow(int[][] a, int n) {
-        int[][] ans = new int[][]{{1, 0}, {0, 1}};
-        while (n > 0) {
-            if ((n & 1) == 1) {
-                ans = multi(ans, a);
-            }
-            a = multi(a, a);
-            n >>= 1;
+        int[] dp = new int[n + 1];
+        dp[0] = dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return ans;
-    }
-
-    private int[][] multi(int[][] a, int[][] b) {
-        int[][] c = new int[2][2];
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
-            }
-        }
-        return c;
+        return dp[n];
     }
 }

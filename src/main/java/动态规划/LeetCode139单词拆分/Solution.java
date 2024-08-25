@@ -19,30 +19,25 @@ public class Solution {
 
     public boolean wordBreak(String s, List<String> wordDict) {
         int n = s.length();
+        // dp[i] 的含义为，长度为 i 的 s 是否能拼凑出来
         boolean[] dp = new boolean[n + 1];
         dp[0] = true;
         for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < wordDict.size(); j++) {
-                String word = wordDict.get(j);
-                if (i - word.length() >= 0) {
-                    if (dp[i - word.length()] && check(s, i - word.length(), word)) {
-                        dp[i] = true;
-                        break;
-                    }
+            for (String word : wordDict) {
+                if (i - word.length() >= 0 && check(s, i - word.length(), word) && dp[i - word.length()]) {
+                    dp[i] = true;
                 }
             }
         }
         return dp[n];
     }
 
-
-    private boolean check(String s, int start, String word) {
-        String substring = s.substring(start);
-        if (substring.length() < word.length()) {
+    private boolean check(String s, int index, String word) {
+        if (s.length() < word.length()) {
             return false;
         }
         for (int i = 0; i < word.length(); i++) {
-            if (substring.charAt(i) != word.charAt(i)) {
+            if (s.charAt(index + i) != word.charAt(i)) {
                 return false;
             }
         }

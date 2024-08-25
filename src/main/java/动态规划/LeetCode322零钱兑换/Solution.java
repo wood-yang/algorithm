@@ -20,7 +20,7 @@ public class Solution {
         for (int i = 1; i <= amount; i++) {
             dp[i] = amount + 1;
             for (int coin : coins) {
-                if (i - coin >= 0 && dp[i - coin] >= 0) {
+                if (i - coin >= 0) {
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }

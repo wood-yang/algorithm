@@ -14,7 +14,7 @@ public class Solution {
         if (check(n)) {
             return 1;
         }
-        for (int i = 1; i * i <= n; i++) {
+        for (int i = 1; i <= Math.sqrt(n); i++) {
             if (check(n - i * i)) {
                 return 2;
             }
@@ -29,7 +29,7 @@ public class Solution {
     }
 
     private boolean check(int n) {
-        int k = (int) Math.sqrt(n);
-        return n == k * k;
+        int x = (int) Math.sqrt(n);
+        return x * x == n;
     }
 }

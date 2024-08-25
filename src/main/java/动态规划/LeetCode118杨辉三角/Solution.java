@@ -13,20 +13,20 @@ public class Solution {
     }
 
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> row = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j <= i; j++) {
                 if (j == 0 || j == i) {
-                    row.add(1);
+                    temp.add(1);
                 }
                 else {
-                    row.add(ans.get(i - 1).get(j - 1) + ans.get(i - 1).get(j));
+                    temp.add(res.get(i - 1).get(j - 1) + res.get(i - 1).get(j));
                 }
             }
-            ans.add(new ArrayList<>(row));
-            row.clear();
+            res.add(new ArrayList<>(temp));
+            temp.clear();
         }
-        return ans;
+        return res;
     }
 }
