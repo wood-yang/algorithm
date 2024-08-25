@@ -1,6 +1,7 @@
 package 二叉树.LeetCode94二叉树的中序遍历;
-
+import 二叉树.TreeNode;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Solution {
@@ -13,31 +14,19 @@ public class Solution {
     }
 
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        inorder(root, res);
-        return res;
-    }
-
-    private void inorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
+        List<Integer> list = new ArrayList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            list.add(root.val);
+            root = root.right;
         }
-        inorder(root.left, res);
-        res.add(root.val);
-        inorder(root.right, res);
+        return list;
     }
 }
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 

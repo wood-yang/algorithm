@@ -17,31 +17,30 @@ public class Solution {
     public int findMin(int[] nums) {
         int l = 0;
         int r = nums.length - 1;
-        while (l <= r) {
+        while (l < r) {
             int mid = ((r - l) >> 1) + l;
-            if (nums[mid] > nums[r]) {
-                l = mid + 1;
-            }
-            else if (nums[mid] < nums[r]) {
+            if (nums[mid] < nums[r]) {
                 r = mid;
             }
+            else if (nums[mid] > nums[r]) {
+                l = mid + 1;
+            }
             else {
-                if (l == r) {
+                if (nums[l] < nums[mid]) {
                     return nums[l];
                 }
-                boolean flag = true;
-                for (int i = r; i > mid; i--) {
-                    if (nums[i] > nums[i - 1]) {
-                        l = mid + 1;
-                        flag = false;
-                        break;
-                    }
-                }
-                if (flag) {
+                else if (nums[l] > nums[mid]) {
                     r = mid;
+                }
+                else {
+                    int min = nums[l];
+                    for (int i = l + 1; i <= r; i++) {
+                        min = Math.min(min, nums[i]);
+                    }
+                    return min;
                 }
             }
         }
-        return nums[0];
+        return nums[l];
     }
 }

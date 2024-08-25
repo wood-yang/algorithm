@@ -26,15 +26,16 @@ public class Solution {
         while (l <= r) {
             int mid = ((r - l) >> 1) + l;
             int x = matrix[mid / n][mid % n];
-            if (x == target) {
-                return true;
-            }
-            else if (x < target) {
+            if (x < target) {
                 l = mid + 1;
             }
-            else {
+            else if (x > target) {
                 r = mid - 1;
             }
+            else {
+                return true;
+            }
+
         }
         return false;
     }

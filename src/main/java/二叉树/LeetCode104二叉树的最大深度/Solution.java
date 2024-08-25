@@ -1,6 +1,8 @@
 package 二叉树.LeetCode104二叉树的最大深度;
 
-import java.util.List;
+import 二叉树.TreeNode;
+
+import java.util.LinkedList;
 
 public class Solution {
     public static void main(String[] args) {
@@ -15,21 +17,24 @@ public class Solution {
         if (root == null) {
             return 0;
         }
-        int leftHeight = maxDepth(root.left);
-        int rightHeight = maxDepth(root.right);
-        return Math.max(leftHeight, rightHeight) + 1;
+        LinkedList<TreeNode> deque = new LinkedList<>();
+        deque.offer(root);
+        int ans = 0;
+        while (!deque.isEmpty()) {
+            int size = deque.size();
+            for (int i = 1; i <= size; i++) {
+                TreeNode poll = deque.poll();
+                if (poll.left != null) {
+                    deque.offer(poll.left);
+                }
+                if (poll.right != null) {
+                    deque.offer(poll.right);
+                }
+            }
+            ans++;
+        }
+        return ans;
     }
-}
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
+
 }

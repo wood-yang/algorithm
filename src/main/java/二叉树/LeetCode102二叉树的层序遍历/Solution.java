@@ -1,5 +1,7 @@
 package 二叉树.LeetCode102二叉树的层序遍历;
 
+import 二叉树.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,40 +19,28 @@ public class Solution {
 
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> ans = new ArrayList<>();
-        if (root == null) {
-            return ans;
-        }
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
         LinkedList<TreeNode> deque = new LinkedList<>();
-        deque.add(root);
+        if (root == null) {
+            return res;
+        }
+        deque.offer(root);
         while (!deque.isEmpty()) {
-            List<Integer> level = new ArrayList<>();
             int size = deque.size();
             for (int i = 0; i < size; i++) {
-                TreeNode node = deque.poll();
-                level.add(node.val);
-                if (node.left != null) {
-                    deque.offer(node.left);
+                TreeNode poll = deque.poll();
+                temp.add(poll.val);
+                if (poll.left != null) {
+                    deque.offer(poll.left);
                 }
-                if (node.right != null) {
-                    deque.offer(node.right);
+                if (poll.right != null) {
+                    deque.offer(poll.right);
                 }
             }
-            ans.add(level);
+            res.add(new ArrayList<>(temp));
+            temp.clear();
         }
-        return ans;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+        return res;
     }
 }

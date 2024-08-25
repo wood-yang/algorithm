@@ -17,31 +17,37 @@ public class Solution {
     }
 
     public int[] searchRange(int[] nums, int target) {
+        if (nums.length == 0) {
+            return new int[]{-1, -1};
+        }
         int l = 0;
         int r = nums.length - 1;
         int[] ans = new int[]{-1, -1};
         while (l <= r) {
             int mid = ((r - l) >> 1) + l;
-            if (nums[mid] < target) {
-                l = mid + 1;
-            }
-            else if (nums[mid] > target) {
+            int x = nums[mid];
+            if (x > target) {
                 r = mid - 1;
+            }
+            else if (x < target) {
+                l = mid + 1;
             }
             else {
                 ans[0] = mid;
                 r = mid - 1;
             }
         }
+
         l = 0;
         r = nums.length - 1;
         while (l <= r) {
             int mid = ((r - l) >> 1) + l;
-            if (nums[mid] < target) {
-                l = mid + 1;
-            }
-            else if (nums[mid] > target) {
+            int x = nums[mid];
+            if (x > target) {
                 r = mid - 1;
+            }
+            else if (x < target) {
+                l = mid + 1;
             }
             else {
                 ans[1] = mid;

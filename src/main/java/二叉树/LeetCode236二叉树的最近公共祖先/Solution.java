@@ -1,5 +1,7 @@
 package 二叉树.LeetCode236二叉树的最近公共祖先;
 
+import 二叉树.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -19,59 +21,22 @@ public class Solution {
         TreeNode treeNode = new Solution().lowestCommonAncestor(root, p, q);
     }
 
+    TreeNode ans;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        LinkedList<TreeNode> deque = new LinkedList<>();
-        TreeNode ans = root;
-        deque.offer(root);
-        while (!deque.isEmpty()) {
-            int size = deque.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode node = deque.poll();
-                if (check(node, p) && check(node, q)) {
-                    ans = node;
-                }
-                if (node.left != null) {
-                    deque.offer(node.left);
-                }
-                if (node.right != null) {
-                    deque.offer(node.right);
-                }
-            }
-        }
+        ans = root;
+        dfs(root, p, q);
         return ans;
     }
 
-    private boolean check(TreeNode root, TreeNode target) {
-        LinkedList<TreeNode> deque = new LinkedList<>();
-        deque.offer(root);
-        while (!deque.isEmpty()) {
-            int size = deque.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode node = deque.poll();
-                if (target == node) {
-                    return true;
-                }
-                if (node.left != null) {
-                    deque.offer(node.left);
-                }
-                if (node.right != null) {
-                    deque.offer(node.right);
-                }
-            }
+    private boolean dfs(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return false;
         }
-        return false;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+        boolean lson = dfs(root.left, p, q);
+        boolean rson = dfs(root.right, p, q);
+        if (lson && rson || ((root.val == p.val) || (root.val == q.val) && (lson || rson))) {
+            ans = root;
+        }
+        return lson || rson || root.val == p.val || root.val == q.val;
     }
 }

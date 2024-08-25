@@ -1,5 +1,7 @@
 package 二叉树.LeetCode98验证二叉搜索树;
 
+import 二叉树.TreeNode;
+
 import java.util.LinkedList;
 
 public class Solution {
@@ -14,29 +16,20 @@ public class Solution {
     }
 
     public boolean isValidBST(TreeNode root) {
-        return helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
-    }
-
-    public boolean helper(TreeNode root, long lower, long upper) {
-        if (root == null) {
-            return true;
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        long min = Long.MIN_VALUE;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (root.val <= min) {
+                return false;
+            }
+            min = root.val;
+            root = root.right;
         }
-        if (root.val >= upper || root.val <= lower) {
-            return false;
-        }
-        return helper(root.left, lower, root.val) && helper(root.right, root.val, upper);
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+        return true;
     }
 }

@@ -8,20 +8,15 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         List<Node> list = new ArrayList<>();
-        Node head = null;
-        Node tail = null;
+        Node dummy = new Node(-1);
+        Node p = dummy;
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
             Node node = new Node(scanner.nextInt());
+            p.next = node;
+            p = p.next;
             list.add(node);
-            if (head == null) {
-                head = tail = node;
-            }
-            else {
-                tail.next = node;
-                tail = tail.next;
-            }
         }
         for (int i = 0; i < n; i++) {
             Node node = list.get(i);
@@ -30,21 +25,38 @@ public class Solution {
                 node.random = list.get(index);
             }
         }
-        new Solution().copyRandomList(head);
+        new Solution().copyRandomList(dummy.next);
     }
 
-    HashMap<Node, Node> cashedNode = new HashMap<>();
+/*
+5
+7 13 11 10 1
+-1 0 4 2 0
+*/
+
     public Node copyRandomList(Node head) {
         if (head == null) {
             return null;
         }
-        if (!cashedNode.containsKey(head)) {
-            Node newHead = new Node(head.val);
-            cashedNode.put(head, newHead);
-            newHead.next = copyRandomList(head.next);
-            newHead.random = copyRandomList(head.random);
+        for (Node node = head; node != null; node = node.next.next) {
+            Node newNode = new Node(node.val);
+            newNode.next = node.next;
+            node.next = newNode;
         }
-        return cashedNode.get(head);
+        for (Node node = head; node != null; node = node.next.next) {
+            Node newNode = node.next;
+            if (node.random != null) {
+                newNode.random = node.random.next;
+            }
+        }
+        Node dummy = new Node(-1);
+        Node p = dummy;
+        for (Node node = head; node != null; node = node.next) {
+            p.next = node.next;
+            p = p.next;
+            node.next = node.next == null ? null : node.next.next;
+        }
+        return dummy.next;
     }
 }
 

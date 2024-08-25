@@ -5,38 +5,62 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
+        ListNode pre = new ListNode();
         Scanner scanner = new Scanner(System.in);
-        ListNode head = null;
-        int n = scanner.nextInt();
-        for (int i = 0; i < n; i++) {
-            ListNode node = null;
-            if (i == 0) {
-                node = new ListNode(scanner.nextInt());
-            } else {
-                node = new ListNode(scanner.nextInt(), head);
-            }
-            head = node;
+        int a = scanner.nextInt();
+        ListNode p = pre;
+        for (int i = 0; i < a; i++) {
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
-
-        boolean palindrome = new Solution().isPalindrome(head);
+        boolean palindrome = new Solution().isPalindrome(pre.next);
         System.out.println(palindrome);
     }
 
     public boolean isPalindrome(ListNode head) {
-        ListNode p1 = head;
-        ListNode p2 = null;
-        while (head != null) {
-            p2 = new ListNode(head.val, p2);
-            head = head.next;
+        if (head == null) {
+            return true;
         }
-        while (p1 != null) {
+        ListNode mid = findMid(head);
+        ListNode halfHead = reserveList(mid.next);
+
+        boolean result = true;
+        ListNode p1 = head;
+        ListNode p2 = halfHead;
+        while (result && p2 != null) {
             if (p1.val != p2.val) {
-                return false;
+                result = false;
             }
             p1 = p1.next;
             p2 = p2.next;
         }
-        return true;
+        mid.next = reserveList(halfHead);
+
+        return result;
+    }
+
+    private ListNode reserveList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+    private ListNode findMid(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
     }
 }
 
@@ -54,12 +78,5 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
-    }
-
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
     }
 }

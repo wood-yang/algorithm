@@ -1,6 +1,6 @@
 package 二叉树.LeetCode114二叉树展开为链表;
 
-import java.util.LinkedList;
+import 二叉树.TreeNode;
 
 public class Solution {
     public static void main(String[] args) {
@@ -12,39 +12,28 @@ public class Solution {
         new Solution().flatten(root);
     }
 
-    LinkedList<TreeNode> deque = new LinkedList<>();
     public void flatten(TreeNode root) {
-        TreeNode dummy = new TreeNode(-1);
-        helper(root);
-        root = dummy;
-        int n = deque.size();
-        for (int i = 0; i < n; i++) {
-            root.right = deque.poll();
-            root.left = null;
-            root = root.right;
+        while (root != null) {
+            // 左子树为null，说明左半部分不需要再修改（包括根节点），直接进行下面的修改接口
+            if (root.left == null) {
+                root = root.right;
+            } else {
+                // 当左子树不为null时，寻找先序遍历中 left节点的最右边（只能位于root.left的右边）
+                // 为什么？？？？？？？？？？？？？？？？？？？
+                // 首先需要想象一个操作顺序：结果是需要一个右斜的链表
+                // 如果顺着左节点走的话，会保留往左倾的连线，所以意思应该是只保留右倾的连线
+                TreeNode pre = root.left;
+                while (pre.right != null) {
+                    pre = pre.right;
+                }
+                // 将根节点的right拼接在pre节点的右边
+                pre.right = root.right;
+                // 将根节点的left拼接到right
+                root.right = root.left;
+                root.left = null;
+                root = root.right;
+            }
         }
-        root = dummy.right;
     }
 
-    public void helper(TreeNode node) {
-        if (node == null) {
-            return;
-        }
-        deque.offer(node);
-        helper(node.left);
-        helper(node.right);
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }

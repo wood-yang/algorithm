@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="206.反转链表">
+    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/链表/LeetCode234回文链表/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/链表/LeetCode234回文链表/Solution.java" afterDir="false" />
     </list>
@@ -12,6 +12,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,12 +32,12 @@
     &quot;assignee&quot;: &quot;wood-yang&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/wood-yang/algorithm.git",
-    "accountId": "afe4bb5f-9bd3-4811-8c5d-1e2ea33f3acb"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/wood-yang/algorithm.git&quot;,
+    &quot;accountId&quot;: &quot;afe4bb5f-9bd3-4811-8c5d-1e2ea33f3acb&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenRunner">
     <option name="jreName" value="corretto-1.8" />
   </component>
@@ -47,47 +50,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Ha.executor": "Debug",
-    "Application.Solution.executor": "Debug",
-    "Application.链表.LeetCode206反转链表.Ha.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/develop/idea_java/algorithm",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FactoryDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ha.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.TestInnerClass.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二分查找.LeetCode33搜索旋转排序数组.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二叉树.LeetCode101对称二叉树.Solution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二叉树.LeetCode102二叉树的层序遍历.Solution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二叉树.LeetCode437路径总和III.Solution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二叉树.LeetCode543二叉树的直径.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二叉树.LeetCode94二叉树的中序遍历.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode138随机链表的复制.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode141环形链表.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode206反转链表.Ha.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode24两两交换链表中的节点.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode25K个一组翻转链表.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Database Script.1757. 可回收且低脂的产品.sql.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestFace.testAsList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestFace.testToArray.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/develop/idea_java/algorithm&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;d341e5a3-7097-485b-bbeb-03f06dc03864/schema/\&quot;sql题\&quot;&quot;
+    ]
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Solution">
-    <configuration name="Ha" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="链表.LeetCode160相交链表.Ha" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="链表.LeetCode160相交链表.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RunManager" selected="Application.二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution">
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="链表.LeetCode234回文链表.Solution" />
+      <option name="MAIN_CLASS_NAME" value="二叉树.LeetCode108将有序数组转换为二叉搜索树.Solution" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="链表.LeetCode234回文链表.*" />
+          <option name="PATTERN" value="二叉树.LeetCode108将有序数组转换为二叉搜索树.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,12 +109,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="链表.LeetCode206反转链表.Ha" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="链表.LeetCode206反转链表.Ha" />
+    <configuration name="二叉树.LeetCode102二叉树的层序遍历.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="二叉树.LeetCode102二叉树的层序遍历.Solution" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="链表.LeetCode206反转链表.*" />
+          <option name="PATTERN" value="二叉树.LeetCode102二叉树的层序遍历.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="二分查找.LeetCode154寻找旋转排序数组中的最小值2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="二分查找.LeetCode33搜索旋转排序数组.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="二分查找.LeetCode33搜索旋转排序数组.Solution" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="二分查找.LeetCode33搜索旋转排序数组.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="二叉树.LeetCode437路径总和III.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="二叉树.LeetCode437路径总和III.Solution" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="二叉树.LeetCode437路径总和III.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,9 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution" />
+        <item itemvalue="Application.二分查找.LeetCode33搜索旋转排序数组.Solution" />
+        <item itemvalue="Application.二叉树.LeetCode437路径总和III.Solution" />
+        <item itemvalue="Application.二叉树.LeetCode102二叉树的层序遍历.Solution" />
         <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.链表.LeetCode206反转链表.Ha" />
-        <item itemvalue="Application.Ha" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +190,32 @@
       <workItem from="1723078691235" duration="1098000" />
       <workItem from="1723079801744" duration="321000" />
       <workItem from="1723080565427" duration="1000" />
-      <workItem from="1723080647631" duration="13489000" />
+      <workItem from="1723080647631" duration="14192000" />
+      <workItem from="1723098773897" duration="6584000" />
+      <workItem from="1723122529683" duration="1017000" />
+      <workItem from="1723217105279" duration="924000" />
+      <workItem from="1723250559199" duration="643000" />
+      <workItem from="1723267757900" duration="9191000" />
+      <workItem from="1723307068534" duration="791000" />
+      <workItem from="1723353971817" duration="14996000" />
+      <workItem from="1723370589570" duration="559000" />
+      <workItem from="1723371788706" duration="41000" />
+      <workItem from="1723454015725" duration="8246000" />
+      <workItem from="1723466132985" duration="308000" />
+      <workItem from="1723473655179" duration="83000" />
+      <workItem from="1723546368050" duration="5533000" />
+      <workItem from="1723596901425" duration="8816000" />
+      <workItem from="1723705057379" duration="1985000" />
+      <workItem from="1723774876611" duration="1191000" />
+      <workItem from="1723810080438" duration="7945000" />
+      <workItem from="1723852687478" duration="596000" />
+      <workItem from="1723896640167" duration="6257000" />
+      <workItem from="1723939830252" duration="390000" />
+      <workItem from="1723967472288" duration="1950000" />
+      <workItem from="1723984795315" duration="599000" />
+      <workItem from="1723985489382" duration="126000" />
+      <workItem from="1724507964617" duration="12732000" />
+      <workItem from="1724548297242" duration="172000" />
     </task>
     <task id="LOCAL-00001" summary="add 之前的算法题">
       <option name="closed" value="true" />
@@ -177,27 +257,84 @@
       <option name="project" value="LOCAL" />
       <updated>1723095084940</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="配置">
+      <option name="closed" value="true" />
+      <created>1723098208908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723098208908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="add 之前的算法题" />
     <MESSAGE value="update 修改一些配置" />
     <MESSAGE value="update LeetCode160相交链表 修改了初始化链表的逻辑" />
     <MESSAGE value="某些配置" />
     <MESSAGE value="206.反转链表" />
-    <option name="LAST_COMMIT_MESSAGE" value="206.反转链表" />
+    <MESSAGE value="配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode234回文链表/Solution.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="11" />
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode234回文链表/Solution.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode141环形链表/Solution.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode141环形链表/Solution.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode25K个一组翻转链表/Solution.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode138随机链表的复制/Solution.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/链表/LeetCode138随机链表的复制/Solution.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/二叉树/LeetCode94二叉树的中序遍历/Solution.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/二叉树/LeetCode108将有序数组转换为二叉搜索树/Solution.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/二分查找/LeetCode154寻找旋转排序数组中的最小值2/Solution.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

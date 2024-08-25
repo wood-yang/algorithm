@@ -1,5 +1,7 @@
 package 二叉树.LeetCode124二叉树中的最大路径和;
 
+import 二叉树.TreeNode;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -30,39 +32,17 @@ public class Solution {
         if (node == null) {
             return 0;
         }
-        int lMax = 0;
-        int rMax = 0;
-        int c;
-        if ((c = helper(node.left)) > 0) {
-            lMax = c;
-        }
-        if ((c = helper(node.right)) > 0) {
-            rMax = c;
-        }
-
+        // lMax rMax 表示左/右子树的向下的路径的最大的和
+        int lMax = helper(node.left);
+        int rMax = helper(node.right);
+        // 如果路径和小于0，那就不连接到当前的节点，置为0即可
+        lMax = Math.max(lMax, 0);
+        rMax = Math.max(rMax, 0);
+        // 判断目前连接路径的和是否大于之前的，若是则替代即可
         int sum = node.val + lMax + rMax;
-        if (sum > ans) {
-            ans = sum;
-        }
+        ans = Math.max(ans, sum);
+        // 返回一条向下的路径，而不是某个节点有两个子节点的那种路径
+        // 意思就是 可供连接的路径的和 的最大值
         return node.val + Math.max(lMax, rMax);
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

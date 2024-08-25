@@ -5,53 +5,46 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ListNode list1 = null;
-        ListNode list2 = null;
+        ListNode pre1 = new ListNode(-1);
+        ListNode pre2 = new ListNode(-1);
+        ListNode p;
+
+        p = pre1;
         int m = scanner.nextInt();
         for (int i = 0; i < m; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = list1;
-            list1 = node;
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
 
+        p = pre2;
         int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = list2;
-            list2 = node;
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
 
-        ListNode listNode = new Solution().addTwoNumbers(list1, list2);
+        ListNode listNode = new Solution().addTwoNumbers(pre1.next, pre2.next);
         System.out.println(listNode);
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int carry = 0;
-        ListNode head = null;
-        ListNode tail = null;
+        ListNode pre = new ListNode(-1);
+        ListNode p = pre;
         while (l1 != null || l2 != null) {
-            int n1 = l1 != null ? l1.val : 0;
-            int n2 = l2 != null ? l2.val : 0;
-            int sum = n1 + n2 + carry;
-            if (head == null) {
-                head = tail = new ListNode(sum % 10);
-            }
-            else {
-                tail.next = new ListNode(sum % 10);
-                tail = tail.next;
-            }
+            int value1 = l1 == null ? 0 : l1.val;
+            int value2 = l2 == null ? 0 : l2.val;
+            int sum = value1 + value2 + carry;
             carry = sum / 10;
-            if (l1 != null) {
-                l1 = l1.next;
-            }
-            if (l2 != null) {
-                l2 = l2.next;
-            }
+            p.next = new ListNode(sum % 10);
+            p = p.next;
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;
         }
-        if (carry > 0) {
-            tail.next = new ListNode(carry);
+        if (carry != 0) {
+            p.next = new ListNode(carry);
         }
-        return head;
+        return pre.next;
     }
 }
 

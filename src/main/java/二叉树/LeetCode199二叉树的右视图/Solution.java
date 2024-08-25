@@ -1,5 +1,7 @@
 package 二叉树.LeetCode199二叉树的右视图;
 
+import 二叉树.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,37 +21,24 @@ public class Solution {
         if (root == null) {
             return new ArrayList<>();
         }
-        List<Integer> ans = new ArrayList<>();
-        LinkedList<TreeNode> list = new LinkedList<>();
-        list.offer(root);
-        while (!list.isEmpty()) {
-            int n = list.size();
-            for (int i = 0; i < n; i++) {
-                TreeNode node = list.poll();
-                if (i == 0) {
-                    ans.add(node.val);
+        List<Integer> res = new ArrayList<>();
+        LinkedList<TreeNode> deque = new LinkedList<>();
+        deque.offer(root);
+        while (!deque.isEmpty()) {
+            int size = deque.size();
+            for (int i = 1; i <= size; i++) {
+                TreeNode poll = deque.poll();
+                if (i == 1) {
+                    res.add(poll.val);
                 }
-                if (node.right != null) {
-                    list.offer(node.right);
+                if (poll.right != null) {
+                    deque.offer(poll.right);
                 }
-                if (node.left != null) {
-                    list.offer(node.left);
+                if (poll.left != null) {
+                    deque.offer(poll.left);
                 }
             }
         }
-        return ans;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+        return res;
     }
 }

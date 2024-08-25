@@ -5,40 +5,41 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ListNode list1 = null;
-        ListNode list2 = null;
+        ListNode pre1 = new ListNode();
+        ListNode pre2 = new ListNode();
         int m = scanner.nextInt();
+        ListNode p = pre1;
         for (int i = 0; i < m; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = list1;
-            list1 = node;
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
 
         int n = scanner.nextInt();
+        p = pre2;
         for (int i = 0; i < n; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = list2;
-            list2 = node;
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
-        ListNode listNode = new Solution().mergeTwoLists(list1, list2);
+        ListNode listNode = new Solution().mergeTwoLists(pre1.next, pre2.next);
         System.out.println(listNode);
     }
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if (list1 == null) {
-            return list2;
+        ListNode pre = new ListNode(-1);
+        ListNode p = pre;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                p.next = list1;
+                list1 = list1.next;
+            }
+            else {
+                p.next = list2;
+                list2 = list2.next;
+            }
+            p = p.next;
         }
-
-        if (list2 == null) {
-            return list1;
-        }
-
-        if (list1.val < list2.val) {
-            return new ListNode(list1.val, mergeTwoLists(list1.next, list2));
-        }
-        else {
-            return new ListNode(list2.val, mergeTwoLists(list1, list2.next));
-        }
+        p.next = list1 != null ? list1 : list2;
+        return pre.next;
     }
 }
 

@@ -18,20 +18,31 @@ public class Solution {
     public int search(int[] nums, int target) {
         int n = nums.length;
         int k = 0;
-        for (int i = 0; i < n - 1; i++) {
-            if (nums[i] > nums[i + 1]) {
-                k = i + 1;
-            }
-        }
-        int l = 0;
+        // k为偏移的大小，也就是最小值的索引
+        int l = 1;
         int r = n - 1;
+        // 这里不是二分找 target，而是找最小值的索引位置
         while (l <= r) {
             int mid = ((r - l) >> 1) + l;
-            if (nums[(mid + k) % n] < target) {
+            int x = nums[mid];
+            if (x > nums[0]) {
                 l = mid + 1;
             }
-            else if (nums[(mid + k) % n] > target) {
+            else {
                 r = mid - 1;
+                k = mid;
+            }
+        }
+        l = 0;
+        r = n - 1;
+        while (l <= r) {
+            int mid = ((r - l) >> 1) + l;
+            int x = nums[(mid + k) % n];
+            if (x > target) {
+                r = mid - 1;
+            }
+            else if (x < target) {
+                l = mid + 1;
             }
             else {
                 return (mid + k) % n;

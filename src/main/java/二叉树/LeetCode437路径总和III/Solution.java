@@ -1,5 +1,7 @@
 package 二叉树.LeetCode437路径总和III;
 
+import 二叉树.TreeNode;
+
 import java.util.*;
 
 public class Solution {
@@ -28,29 +30,14 @@ public class Solution {
         if (root == null) {
             return 0;
         }
-
-        int ret = 0;
         curr += root.val;
-
-        ret = prefix.getOrDefault(curr - targetSum, 0);
+        int res = prefix.getOrDefault(curr - targetSum, 0);
+        // 保存目前的前缀和，用以后面子树里面的节点到根节点的前缀和
         prefix.put(curr, prefix.getOrDefault(curr, 0) + 1);
-        ret += dfs(root.left, prefix, curr, targetSum);
-        ret += dfs(root.right, prefix, curr, targetSum);
+        res += dfs(root.left, prefix, curr, targetSum);
+        res += dfs(root.right, prefix, curr, targetSum);
+        // 当前节点的左右子树已经全部遍历完，也就是说以这个节点就不会再使用了，所以把它除去，因为题设要求需要统计向下的路径个数
         prefix.put(curr, prefix.getOrDefault(curr, 0) - 1);
-
-        return ret;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+        return res;
     }
 }

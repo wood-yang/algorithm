@@ -1,48 +1,37 @@
 package 链表.LeetCode19删除链表的倒数第N个结点;
 
 import java.util.Scanner;
+import java.util.Stack;
+
 
 public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ListNode head = null;
-        ListNode tail = null;
+        ListNode dummy = new ListNode();
+        ListNode p = dummy;
         int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            if (head == null) {
-                head = tail = node;
-            }
-            else {
-                tail.next = node;
-                tail = tail.next;
-            }
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
         int k = scanner.nextInt();
-        ListNode listNode = new Solution().removeNthFromEnd(head, k);
+        ListNode listNode = new Solution().removeNthFromEnd(dummy.next, k);
         System.out.println(listNode);
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(-1, head);
-        int length = getLength(head);
-        //删除的节点在第index个, 从头节点遍历index前一个节点需要index-2次
-        ListNode cur = dummy;
-        for (int i = 1; i <= length - n; i++) {
-            cur = cur.next;
+        ListNode p1 = dummy;
+        ListNode p2 = dummy;
+        for (int i = 1; i <= n + 1; i++) {
+            p2 = p2.next;
         }
-        cur.next = cur.next.next;
-
+        while (p2 != null) {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        p1.next = p1.next.next;
         return dummy.next;
-    }
-
-    private int getLength(ListNode head) {
-        int count = 0;
-        while (head != null) {
-            count++;
-            head = head.next;
-        }
-        return count;
     }
 }
 

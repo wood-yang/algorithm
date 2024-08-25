@@ -1,5 +1,7 @@
 package 二叉树.LeetCode543二叉树的直径;
 
+import 二叉树.TreeNode;
+
 public class Solution {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
@@ -13,35 +15,19 @@ public class Solution {
 
     int ans = 0;
     public int diameterOfBinaryTree(TreeNode root) {
-        longestSide(root);
+        maxDepth(root);
         return ans;
     }
 
-    private int longestSide(TreeNode root) {
-        int l, r;
+    private int maxDepth(TreeNode root) {
         if (root == null) {
-            return -1;
+            return 0;
         }
-        else {
-            l = longestSide(root.left) + 1;
-            r = longestSide(root.right) + 1;
-            if (l + r > ans) {
-                ans = l + r;
-            }
-        }
-        return Math.max(l, r);
+        int lMax = maxDepth(root.left);
+        int rMax = maxDepth(root.right);
+        ans = Math.max(ans, lMax + rMax);
+        return Math.max(lMax, rMax) + 1;
     }
 }
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+

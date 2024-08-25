@@ -1,6 +1,7 @@
 package 二叉树.LeetCode108将有序数组转换为二叉搜索树;
 
-import java.util.LinkedList;
+import 二叉树.TreeNode;
+
 import java.util.Scanner;
 
 public class Solution {
@@ -16,32 +17,17 @@ public class Solution {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        return getRoot(0, nums.length - 1, nums);
+        return getRoot(nums, 0, nums.length - 1);
     }
 
-    private TreeNode getRoot(int l, int r, int[] nums) {
+    private TreeNode getRoot(int[] nums, int l, int r) {
         if (l > r) {
             return null;
         }
-
-        int mid = (l + r) / 2;
+        int mid = (l + r) >> 1;
         TreeNode root = new TreeNode(nums[mid]);
-        root.left = getRoot(l, mid - 1, nums);
-        root.right = getRoot(mid + 1, r, nums);
-
+        root.left = getRoot(nums, l, mid - 1);
+        root.right = getRoot(nums, mid + 1, r);
         return root;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

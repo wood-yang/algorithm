@@ -5,53 +5,43 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ListNode head = null;
-        ListNode huan = null;
-        int m = scanner.nextInt();
-        for (int i = 0; i < m; i++) {
-            ListNode node = null;
-            node = new ListNode(scanner.nextInt());
-            if (i == 0) {
-                huan = node;
+        ListNode pre = new ListNode();
+        ListNode cycleNode = new ListNode();
+        int a = scanner.nextInt();
+        int index = scanner.nextInt();
+        ListNode p = pre;
+        for (int i = 0; i < a; i++) {
+            p.next = new ListNode(scanner.nextInt());
+            if (i == index) {
+                cycleNode = p;
             }
-            node.next = head;
-            head = node;
+            p = p.next;
         }
-        huan.next = head;
-        int n = scanner.nextInt();
-        for (int i = 0; i < n; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            node.next = head;
-            head = node;
-        }
+        p.next = cycleNode;
 
-        ListNode listNode = new Solution().detectCycle(head);
+        ListNode listNode = new Solution().detectCycle(pre.next);
         System.out.println(listNode);
     }
 
     public ListNode detectCycle(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null || head.next == null || head.next.next == null) {
             return null;
         }
         ListNode slow = head.next;
-        ListNode quick = head.next.next;
-        while (slow != quick) {
-            if (slow != null) {
-                slow = slow.next;
+        ListNode fast = head.next.next;
+        while (fast.next != null && fast.next.next != null) {
+            if (slow == fast) {
+                fast = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
             }
-            if (quick != null && quick.next != null) {
-                quick = quick.next.next;
-            }
-            else {
-                return null;
-            }
-        }
-        quick = head;
-        while (slow != quick) {
             slow = slow.next;
-            quick = quick.next;
+            fast = fast.next.next;
         }
-        return slow;
+        return null;
     }
 }
 
@@ -59,7 +49,15 @@ class ListNode {
     int val;
     ListNode next;
 
+    ListNode() {
+    }
+
     ListNode(int val) {
         this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }

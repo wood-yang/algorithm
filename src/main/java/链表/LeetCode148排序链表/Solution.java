@@ -8,25 +8,19 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ListNode head = null;
-        ListNode tail = null;
+        ListNode dummy = new ListNode(-1);
+        ListNode p = dummy;
         int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
-            ListNode node = new ListNode(scanner.nextInt());
-            if (head == null) {
-                head = tail = node;
-            }
-            else {
-                tail.next = node;
-                tail = tail.next;
-            }
+            p.next = new ListNode(scanner.nextInt());
+            p = p.next;
         }
-        new Solution().sortList(head);
+        new Solution().sortList(dummy.next);
     }
 
     public ListNode sortList(ListNode head) {
-        if (head == null) {
-            return null;
+        if (head == null || head.next == null) {
+            return head;
         }
         int length = 0;
         ListNode p = head;
@@ -34,57 +28,68 @@ public class Solution {
             length++;
             p = p.next;
         }
-        ListNode dummyHead = new ListNode(-1, head);
+        ListNode dummy = new ListNode(-1, head);
+        ListNode prev = dummy;
+        ListNode curr = dummy.next;
         for (int subLength = 1; subLength <= length; subLength <<= 1) {
-            ListNode prev = dummyHead;
-            ListNode curr = dummyHead.next;
+            //如果curr为null，说明此次合并已经完成，进行下一次合并
             while (curr != null) {
                 ListNode head1 = curr;
+                //确定head1的尾节点
                 for (int i = 1; i < subLength && curr.next != null; i++) {
                     curr = curr.next;
                 }
                 //确定head2的头节点
                 ListNode head2 = curr.next;
-                //让head1的末尾指向null, 而不是head1链表后面的节点
+                //确定好了之后，让head1的尾节点指向null
                 curr.next = null;
-                //继续遍历head2
+                //继续遍历head2，确定head2的尾节点
                 curr = head2;
                 for (int i = 1; i < subLength && curr != null && curr.next != null; i++) {
                     curr = curr.next;
                 }
-                //如果遍历完head2链表后, 后续不为空, 则将next赋为head2尾节点的下一个节点
+                //保存head2尾节点后面的节点
                 ListNode next = null;
                 if (curr != null) {
                     next = curr.next;
                     curr.next = null;
                 }
-                //合并两个链表, 并且将合并后的头节点 拼在prev的后面, 遍历prev
-                ListNode merge = merge(head1, head2);
-                prev.next = merge;
-                //prev为当前已 合并 后的链表的最后一个节点
+                prev.next = merge(head1, head2);
+                //遍历prev到当前已合并链表的最后一个节点
+                //此处不能直接prev = curr，因为curr可能为null
                 while (prev.next != null) {
                     prev = prev.next;
                 }
-                //next为未合并的链表的第一个节点
+                //next 是未合并链表的第一个节点
                 curr = next;
             }
         }
-        return dummyHead.next;
+        return dummy.next;
     }
+
     private ListNode merge(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(-1);
+        ListNode p = dummy;
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                p.next = l1.next;
+                l1 = l1.next;
+            }
+            else {
+                p.next = l2.next;
+                l2 = l2.next;
+            }
+            p = p.next;
+        }
         if (l1 == null) {
-            return l2;
-        }
-        if (l2 == null) {
-            return l1;
-        }
-        if (l1.val < l2.val) {
-            return new ListNode(l1.val, merge(l1.next, l2));
+            p.next = l2;
         }
         else {
-            return new ListNode(l2.val, merge(l1, l2.next));
+            p.next = l1;
         }
+        return dummy.next;
     }
+
 }
 
 class ListNode {

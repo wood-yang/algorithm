@@ -1,5 +1,9 @@
 package 二叉树.LeetCode101对称二叉树;
 
+import 二叉树.TreeNode;
+
+import java.util.LinkedList;
+
 public class Solution {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
@@ -15,26 +19,25 @@ public class Solution {
         return check(root, root);
     }
 
-    private boolean check(TreeNode left, TreeNode right) {
-        if (left == null && right == null) {
-            return true;
-        }
-        else if (left == null || right == null) {
-            return false;
-        }
-        return left.val == right.val && check(left.left, right.right) && check(left.right, right.left);
-    }
-}
+    private boolean check(TreeNode u, TreeNode v) {
+        LinkedList<TreeNode> deque = new LinkedList<>();
+        deque.offer(u);
+        deque.offer(v);
+        while (!deque.isEmpty()) {
+            u = deque.poll();
+            v = deque.poll();
+            if (u == null && v == null) {
+                continue;
+            }
+            if (u == null || v == null || u.val != v.val) {
+                return false;
+            }
+            deque.offer(u.left);
+            deque.offer(v.right);
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
+            deque.offer(u.right);
+            deque.offer(v.left);
+        }
+        return true;
     }
 }
