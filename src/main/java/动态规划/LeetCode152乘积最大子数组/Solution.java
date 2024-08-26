@@ -16,14 +16,15 @@ public class Solution {
 
     public int maxProduct(int[] nums) {
         int n = nums.length;
-        int max = nums[0];
-        int min = nums[0];
-        int ans = nums[0];
+        int max;
+        int min;
+        int ans;
+        max = min = ans = nums[0];
         for (int i = 1; i < n; i++) {
             int mx = max;
             int mn = min;
-            max = Math.max(nums[i] * mn, Math.max(nums[i], nums[i] * mx));
-            min = Math.min(nums[i] * mn, Math.min(nums[i], nums[i] * mx));
+            max = Math.max(Math.max(mx * nums[i], mn * nums[i]), nums[i]);
+            min = Math.min(Math.min(mx * nums[i], mn * nums[i]), nums[i]);
             ans = Math.max(ans, max);
         }
         return ans;

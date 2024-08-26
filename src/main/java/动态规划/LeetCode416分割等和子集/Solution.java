@@ -28,7 +28,7 @@ public class Solution {
         dp[0] = true;
         for (int i = 0; i < n; i++) {
             for (int j = sum / 2; j >= nums[i]; j--) {
-                dp[j] = dp[j] || dp[j - nums[i]];
+                dp[j] |= dp[j - nums[i]];
             }
         }
         return dp[sum / 2];

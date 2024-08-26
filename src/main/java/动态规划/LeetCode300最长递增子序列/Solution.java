@@ -18,8 +18,8 @@ public class Solution {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
         int[] d = new int[n];
-        d[0] = nums[0];
         int len = 1;
+        d[0] = nums[0];
         for (int i = 1; i < n; i++) {
             if (nums[i] > d[len - 1]) {
                 d[len++] = nums[i];
@@ -30,22 +30,20 @@ public class Solution {
         }
         return len;
     }
-
     private int find(int[] d, int len, int target) {
         int l = 0;
         int r = len - 1;
-        while (l <= r) {
+        while (l < r) {
             int mid = ((r - l) >> 1) + l;
-            if (d[mid] > target) {
-                r = mid - 1;
-            }
-            else if (d[mid] < target) {
-                l = mid + 1;
+            int x = d[mid];
+            if (x >= target) {
+                r = mid;
             }
             else {
-                r = mid - 1;
+                l = mid + 1;
             }
         }
-        return r + 1;
+        return l;
     }
+
 }
