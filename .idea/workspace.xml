@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update 复习题目">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/二分查找/LeetCode153寻找旋转排序数组中的最小值/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/二分查找/LeetCode153寻找旋转排序数组中的最小值/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/二分查找/LeetCode4寻找两个正序数组的中位数/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/二分查找/LeetCode4寻找两个正序数组的中位数/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode118杨辉三角/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode118杨辉三角/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode139单词拆分/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode139单词拆分/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode198打家劫舍/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode198打家劫舍/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode279完全平方数/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode279完全平方数/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode322零钱兑换/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode322零钱兑换/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode70爬楼梯/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/动态规划/LeetCode70爬楼梯/Solution.java" afterDir="false" />
-    </list>
+    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update 复习动态规划" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,12 +29,12 @@
     &quot;assignee&quot;: &quot;wood-yang&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/wood-yang/algorithm_.git",
-    "accountId": "afe4bb5f-9bd3-4811-8c5d-1e2ea33f3acb"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/wood-yang/algorithm_.git&quot;,
+    &quot;accountId&quot;: &quot;afe4bb5f-9bd3-4811-8c5d-1e2ea33f3acb&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenRunner">
     <option name="jreName" value="corretto-1.8" />
   </component>
@@ -57,53 +47,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.FactoryDemo.executor": "Run",
-    "Application.Ha.executor": "Debug",
-    "Application.Solution.executor": "Debug",
-    "Application.TestInnerClass.executor": "Run",
-    "Application.二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution.executor": "Debug",
-    "Application.二分查找.LeetCode33搜索旋转排序数组.Solution.executor": "Debug",
-    "Application.二分查找.LeetCode4寻找两个正序数组的中位数.Solution.executor": "Debug",
-    "Application.二叉树.LeetCode101对称二叉树.Solution.executor": "Run",
-    "Application.二叉树.LeetCode102二叉树的层序遍历.Solution.executor": "Run",
-    "Application.二叉树.LeetCode437路径总和III.Solution.executor": "Run",
-    "Application.二叉树.LeetCode543二叉树的直径.Solution.executor": "Debug",
-    "Application.二叉树.LeetCode94二叉树的中序遍历.Solution.executor": "Debug",
-    "Application.动态规划.LeetCode139单词拆分.Solution.executor": "Debug",
-    "Application.链表.LeetCode138随机链表的复制.Solution.executor": "Debug",
-    "Application.链表.LeetCode141环形链表.Solution.executor": "Debug",
-    "Application.链表.LeetCode206反转链表.Ha.executor": "Debug",
-    "Application.链表.LeetCode24两两交换链表中的节点.Solution.executor": "Debug",
-    "Application.链表.LeetCode25K个一组翻转链表.Solution.executor": "Debug",
-    "Database Script.1757. 可回收且低脂的产品.sql.executor": "Run",
-    "JUnit.TestFace.testAsList.executor": "Run",
-    "JUnit.TestFace.testToArray.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/develop/idea_java/algorithm",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FactoryDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Ha.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.TestInnerClass.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二分查找.LeetCode154寻找旋转排序数组中的最小值2.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二分查找.LeetCode33搜索旋转排序数组.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二分查找.LeetCode4寻找两个正序数组的中位数.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二叉树.LeetCode101对称二叉树.Solution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二叉树.LeetCode102二叉树的层序遍历.Solution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二叉树.LeetCode437路径总和III.Solution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.二叉树.LeetCode543二叉树的直径.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.二叉树.LeetCode94二叉树的中序遍历.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.动态规划.LeetCode139单词拆分.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode138随机链表的复制.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode141环形链表.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode206反转链表.Ha.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode24两两交换链表中的节点.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.链表.LeetCode25K个一组翻转链表.Solution.executor&quot;: &quot;Debug&quot;,
+    &quot;Database Script.1757. 可回收且低脂的产品.sql.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestFace.testAsList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestFace.testToArray.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/develop/idea_java/algorithm&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "d341e5a3-7097-485b-bbeb-03f06dc03864/schema/\"sql题\""
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;d341e5a3-7097-485b-bbeb-03f06dc03864/schema/\&quot;sql题\&quot;&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.动态规划.LeetCode139单词拆分.Solution">
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="动态规划.LeetCode279完全平方数.Solution" />
@@ -226,6 +216,7 @@
       <workItem from="1724507964617" duration="12732000" />
       <workItem from="1724548297242" duration="172000" />
       <workItem from="1724586557152" duration="12996000" />
+      <workItem from="1724600516639" duration="696000" />
     </task>
     <task id="LOCAL-00001" summary="add 之前的算法题">
       <option name="closed" value="true" />
@@ -291,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724586772488</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update 复习动态规划">
+      <option name="closed" value="true" />
+      <created>1724600613929</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724600613929</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +307,8 @@
     <MESSAGE value="206.反转链表" />
     <MESSAGE value="配置" />
     <MESSAGE value="update 复习题目" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 复习题目" />
+    <MESSAGE value="update 复习动态规划" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 复习动态规划" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
