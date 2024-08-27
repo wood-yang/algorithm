@@ -11,29 +11,33 @@ public class Solution {
     }
 
     public String longestPalindrome(String s) {
-        if (s.length() == 1) {
-            return s;
-        }
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
         int start = 0;
         int end = 0;
-        for (int i = 0; i < s.length(); i++) {
-            int len1 = expand(s, i, i);
-            int len2 = expand(s, i, i + 1);
-            int len = Math.max(len1, len2);
-            //通过简单举例得出start end的公式
-            if (len > end - start + 1) {
-                start = i - (len - 1) / 2;
-                end = i + len / 2;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i >= j) {
+                    dp[i][j] = true;
+                }
+            }
+        }
+        for (int len = 2; len <= n; len++) {
+            for (int i = 0; i < n; i++) {
+                int j = i + len - 1;
+                // 越界则退出
+                if (j >= n) {
+                    break;
+                }
+                if (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]) {
+                    dp[i][j] = true;
+                    if (j - i + 1 > end - start + 1) {
+                        start = i;
+                        end = j;
+                    }
+                }
             }
         }
         return s.substring(start, end + 1);
-    }
-
-    private int expand(String s, int left, int right) {
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            left--;
-            right++;
-        }
-        return right - left - 1;
     }
 }
