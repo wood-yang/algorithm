@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update 复习多维动态规划">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode17电话号码的字母组合/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode17电话号码的字母组合/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode39组合总和/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode39组合总和/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode46全排列/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode46全排列/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode78子集/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode78子集/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/多维动态规划/LeetCode62不同路径/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/多维动态规划/LeetCode62不同路径/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode056合并区间/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode056合并区间/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode189轮转数组/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode189轮转数组/Solution.java" afterDir="false" />
-    </list>
+    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update 复习回溯 + 数组" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,7 +227,7 @@
       <workItem from="1724718977006" duration="719000" />
       <workItem from="1724761654851" duration="7907000" />
       <workItem from="1724805834051" duration="624000" />
-      <workItem from="1724849995134" duration="9719000" />
+      <workItem from="1724849995134" duration="12699000" />
     </task>
     <task id="LOCAL-00001" summary="add 之前的算法题">
       <option name="closed" value="true" />
@@ -366,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724807425470</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update 复习回溯 + 数组">
+      <option name="closed" value="true" />
+      <created>1724864692391</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1724864692391</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +395,8 @@
     <MESSAGE value="update 复习题目" />
     <MESSAGE value="update 复习动态规划" />
     <MESSAGE value="update 复习多维动态规划" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 复习多维动态规划" />
+    <MESSAGE value="update 复习回溯 + 数组" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 复习回溯 + 数组" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -460,6 +460,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/多维动态规划/LeetCode5最长回文子串/Solution.java</url>
           <line>40</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/普通数组/LeetCode189轮转数组/Solution.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
