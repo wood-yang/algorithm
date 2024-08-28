@@ -16,28 +16,25 @@ public class Solution {
         System.out.println(permute);
     }
 
-    List<List<Integer>> ans;
-    int[] visited;
+    List<List<Integer>> ans = new ArrayList<>();
+    boolean[] visited;
     public List<List<Integer>> permute(int[] nums) {
-        ans = new ArrayList<List<Integer>>();
-        visited = new int[nums.length];
-        List<Integer> list = new ArrayList<>();
-        helper(list, nums, 0);
+        visited = new boolean[nums.length];
+        helper(nums, new ArrayList<>(), visited);
         return ans;
     }
 
-    private void helper(List<Integer> list, int[] nums, int level) {
-        if (level == nums.length) {
-            ans.add(new ArrayList<>(list));
-            return;
+    private void helper(int[] nums, List<Integer> temp, boolean[] visited) {
+        if (temp.size() == nums.length) {
+            ans.add(new ArrayList<>(temp));
         }
         for (int i = 0; i < nums.length; i++) {
-            if (visited[i] == 0) {
-                list.add(nums[i]);
-                visited[i] = 1;
-                helper(list, nums, level + 1);
-                list.remove(Integer.valueOf(nums[i]));
-                visited[i] = 0;
+            if (!visited[i]) {
+                visited[i] = true;
+                temp.add(nums[i]);
+                helper(nums, temp, visited);
+                visited[i] = false;
+                temp.remove(Integer.valueOf(temp.size() - 1));
             }
         }
     }

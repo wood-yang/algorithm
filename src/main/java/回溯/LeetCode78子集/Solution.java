@@ -17,29 +17,43 @@ public class Solution {
         System.out.println(subsets);
     }
 
-    List<List<Integer>> ans;
-    HashSet<List<Integer>> set;
-    int[] visited;
+    /**
+     * 迭代法(用位)
+     */
     public List<List<Integer>> subsets(int[] nums) {
-        ans = new ArrayList<>();
-        set = new HashSet<>();
-        visited = new int[nums.length];
-        List<Integer> list = new ArrayList<>();
-        backtrack(list, nums, 0);
-        ans.addAll(set);
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
+        int n = nums.length;
+        for (int i = 0; i < (1 << n); i++) {
+            for (int j = 0; j < n; j++) {
+                if (((1 << j) & i) != 0) {
+                    temp.add(nums[j]);
+                }
+            }
+            ans.add(new ArrayList<>(temp));
+            temp.clear();
+        }
         return ans;
     }
 
-    private void backtrack(List<Integer> list, int[] nums, int index) {
-        set.add(new ArrayList<>(list));
-        for (int i = index; i < nums.length; i++) {
-            if (visited[i] == 0) {
-                list.add(nums[i]);
-                visited[i] = 1;
-                backtrack(list, nums, i + 1);
-                list.remove(Integer.valueOf(nums[i]));
-                visited[i] = 0;
-            }
-        }
-    }
+    /**
+     * 回溯法
+     */
+//    List<List<Integer>> ans;
+//    public List<List<Integer>> subsets(int[] nums) {
+//        ans = new ArrayList<>();
+//        backtrack(new ArrayList<>(), nums, 0);
+//        return ans;
+//    }
+//
+//    private void backtrack(List<Integer> list, int[] nums, int index) {
+//        if (index == nums.length) {
+//            ans.add(new ArrayList<>(list));
+//            return;
+//        }
+//        backtrack(list, nums, index + 1);
+//        list.add(nums[index]);
+//        backtrack(list, nums, index + 1);
+//        list.remove(list.size() - 1);
+//    }
 }

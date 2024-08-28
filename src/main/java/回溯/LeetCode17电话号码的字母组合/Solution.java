@@ -12,10 +12,9 @@ public class Solution {
         System.out.println(list);
     }
 
-    List<String> ans;
+    List<String> ans = new ArrayList<>();
     char[][] letter;
     public List<String> letterCombinations(String digits) {
-        ans = new ArrayList<>();
         letter = new char[10][4];
         letter[2] = new char[]{'a', 'b', 'c'};
         letter[3] = new char[]{'d', 'e', 'f'};
@@ -25,24 +24,22 @@ public class Solution {
         letter[7] = new char[]{'p', 'q', 'r', 's'};
         letter[8] = new char[]{'t', 'u', 'v'};
         letter[9] = new char[]{'w', 'x', 'y', 'z'};
-        char[] chars = new char[digits.length()];
         if (digits.isEmpty()) {
             return new ArrayList<>();
         }
-
-        backtrack(chars, digits, 0);
+        backtrack(new char[digits.length()], digits, 0);
         return ans;
     }
 
-    private void backtrack(char[] chars, String digits, int level) {
-        if (level == digits.length()) {
-            ans.add(new String(chars));
+    private void backtrack(char[] ch, String digits, int level) {
+        if (ch.length == level) {
+            ans.add(new String(ch));
             return;
         }
         int num = digits.charAt(level) - '0';
-        for (int j = 0; j < letter[num].length; j++) {
-            chars[level] = letter[num][j];
-            backtrack(chars, digits, level + 1);
+        for (int i = 0; i < letter[num].length; i++) {
+            ch[level] = letter[num][i];
+            backtrack(ch, digits, level + 1);
         }
     }
 }

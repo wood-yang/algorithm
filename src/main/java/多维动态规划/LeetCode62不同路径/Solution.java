@@ -39,16 +39,14 @@ public class Solution {
      * @return
      */
     public int uniquePaths(int m, int n) {
-        int n1 = 1;
-        int n2 = 1;
+        long ans = 1L;
         int a = n;
         int b = 1;
         for (int i = 1; i <= m - 1; i++) {
-            n1 *= a;
-            n2 *= b;
+            ans = ans * a / b;
             a++;
             b++;
         }
-        return n1 / n2;
+        return (int) ans;
     }
 }

@@ -20,10 +20,11 @@ public class Solution {
 
             int[] ans = new int[n];
             ans[0] = 1;
+            // ans[i] 此处暂时表示 nums[i] 的左边所有数的乘积
             for (int i = 1; i < n; i++) {
                 ans[i] = ans[i - 1] * nums[i - 1];
             }
-
+            // mul 表示 nums[i] 的右边所有数的乘积
             int mul = 1;
             for (int i = n - 2; i >= 0; i--) {
                 mul *= nums[i + 1];

@@ -19,12 +19,14 @@ public class Solution {
         int n = nums.length;
         k = k % n;
         int[] temp = new int[k];
+
+        // temp 数组存储的 后k位索引位置的数，所以我们可以先用这个位置的数作为中转，最后用temp给这些位置的数赋值
         for (int i = 0; i < k; i++) {
             temp[i] = nums[n - 1 - i];
         }
         int a = 0;
         for (int i = n - 1; i >= 0; i--) {
-            if (i - k >= 0) {
+            if (i >= k) {
                 nums[i] = nums[i - k];
             }
             else {

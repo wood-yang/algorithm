@@ -20,25 +20,17 @@ public class Solution {
 
     public int[][] merge(int[][] intervals) {
         ArrayList<int[]> list = new ArrayList<>();
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] != o2[0] ? o1[0] - o2[0] : o1[1] - o2[1];
-            }
-        });
+        Arrays.sort(intervals, (o1, o2) -> o1[0] - o2[0]);
         int n = intervals.length;
-        int max = -1;
         for (int i = 0; i < n; i++) {
-            int l = i;
-            if (max >= intervals[i][1]) {
-                continue;
-            }
-            max = intervals[i][1];
+            int min = intervals[i][0];
+            int max = intervals[i][1];
+            // while 非常巧妙，一直维护到不能涵盖，否则我就利滚利滚利，嘎嘎合取
             while (i + 1 < n && max >= intervals[i + 1][0]) {
                 max = Math.max(max, intervals[i + 1][1]);
                 i++;
             }
-            list.add(new int[]{intervals[l][0], max});
+            list.add(new int[]{min, max});
         }
 
         return list.toArray(new int[][]{});

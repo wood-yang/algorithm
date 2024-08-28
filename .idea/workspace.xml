@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update 复习多维动态规划" />
+    <list default="true" id="4a81b0f1-3720-4cc8-81ab-c72288e6d688" name="Changes" comment="update 复习多维动态规划">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode17电话号码的字母组合/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode17电话号码的字母组合/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode39组合总和/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode39组合总和/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode46全排列/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode46全排列/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/回溯/LeetCode78子集/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/回溯/LeetCode78子集/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/多维动态规划/LeetCode62不同路径/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/多维动态规划/LeetCode62不同路径/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode056合并区间/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode056合并区间/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode189轮转数组/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/普通数组/LeetCode189轮转数组/Solution.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +72,8 @@
     "Application.二叉树.LeetCode94二叉树的中序遍历.Solution.executor": "Debug",
     "Application.动态规划.LeetCode139单词拆分.Solution.executor": "Debug",
     "Application.动态规划.LeetCode152乘积最大子数组.Solution.executor": "Debug",
+    "Application.回溯.LeetCode46全排列.Solution.executor": "Debug",
+    "Application.回溯.LeetCode78子集.Solution.executor": "Debug",
     "Application.多维动态规划.LeetCode5最长回文子串.Solution.executor": "Debug",
     "Application.链表.LeetCode138随机链表的复制.Solution.executor": "Debug",
     "Application.链表.LeetCode141环形链表.Solution.executor": "Debug",
@@ -96,26 +107,13 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.多维动态规划.LeetCode5最长回文子串.Solution">
+  <component name="RunManager" selected="Application.Solution">
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="动态规划.LeetCode279完全平方数.Solution" />
+      <option name="MAIN_CLASS_NAME" value="普通数组.LeetCode189轮转数组.Solution" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="动态规划.LeetCode279完全平方数.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="动态规划.LeetCode139单词拆分.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="动态规划.LeetCode139单词拆分.Solution" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="动态规划.LeetCode139单词拆分.*" />
+          <option name="PATTERN" value="普通数组.LeetCode189轮转数组.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,12 +134,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="二分查找.LeetCode4寻找两个正序数组的中位数.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="二分查找.LeetCode4寻找两个正序数组的中位数.Solution" />
+    <configuration name="回溯.LeetCode46全排列.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="回溯.LeetCode46全排列.Solution" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="二分查找.LeetCode4寻找两个正序数组的中位数.*" />
+          <option name="PATTERN" value="回溯.LeetCode46全排列.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,13 +160,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="回溯.LeetCode78子集.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="回溯.LeetCode78子集.Solution" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="回溯.LeetCode78子集.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.回溯.LeetCode78子集.Solution" />
+        <item itemvalue="Application.回溯.LeetCode46全排列.Solution" />
         <item itemvalue="Application.多维动态规划.LeetCode5最长回文子串.Solution" />
         <item itemvalue="Application.动态规划.LeetCode152乘积最大子数组.Solution" />
-        <item itemvalue="Application.动态规划.LeetCode139单词拆分.Solution" />
-        <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.二分查找.LeetCode4寻找两个正序数组的中位数.Solution" />
       </list>
     </recent_temporary>
   </component>
@@ -224,6 +235,8 @@
       <workItem from="1724687691372" duration="35000" />
       <workItem from="1724718977006" duration="719000" />
       <workItem from="1724761654851" duration="7907000" />
+      <workItem from="1724805834051" duration="624000" />
+      <workItem from="1724849995134" duration="9719000" />
     </task>
     <task id="LOCAL-00001" summary="add 之前的算法题">
       <option name="closed" value="true" />
@@ -345,11 +358,30 @@
       <option name="project" value="LOCAL" />
       <updated>1724770313861</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update 复习多维动态规划">
+      <option name="closed" value="true" />
+      <created>1724807425469</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1724807425470</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
