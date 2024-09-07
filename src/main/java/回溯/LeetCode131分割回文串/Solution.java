@@ -1,4 +1,4 @@
-package 多维动态规划.LeetCode131分割回文串;
+package 回溯.LeetCode131分割回文串;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class Solution {
                 f[i][j] = true;
             }
         }
+        // 计算出来字符串所有子串是否为回文串
         for (int i = 1; i < n; i++) {
             for (int j = 0; j + i < n; j++) {
                 if (s.charAt(j) == s.charAt(j + i) && f[j + 1][j + i - 1]) {
@@ -40,6 +41,7 @@ public class Solution {
             ans.add(new ArrayList<>(list));
             return;
         }
+        // 从当前字符串开头开始遍历取回文串，满足就把回文串截出来，然后缩小剩下的字符串的范围
         for (int i = l; i <= r; i++) {
             if (f[l][i]) {
                 list.add(s.substring(l, i + 1));

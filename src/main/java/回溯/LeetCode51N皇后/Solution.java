@@ -13,6 +13,7 @@ public class Solution {
     }
 
     List<List<String>> ans;
+    char[] empty;
     boolean[] visited;
     boolean[] visitedL;
     boolean[] visitedR;
@@ -21,6 +22,10 @@ public class Solution {
         visited = new boolean[n];
         visitedL = new boolean[2 * n - 1];
         visitedR = new boolean[2 * n - 1];
+        empty = new char[n];
+        for (int i = 0; i < n; i++) {
+            empty[i] = '.';
+        }
         backtrack(n, new ArrayList<>(), new char[n], 0);
 
         return ans;
@@ -31,6 +36,7 @@ public class Solution {
             ans.add(new ArrayList<>(list));
             return;
         }
+        // 按行遍历，确保行是不会相撞的，于是判定列、两个对角线是否冲突即可
         for (int i = 0; i < n; i++) {
             if (visited[i] || visitedL[n + level - i - 1] || visitedR[level + i]) {
                 continue;

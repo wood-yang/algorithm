@@ -37,13 +37,14 @@ public class Solution {
     }
 
     private void backtrack(char[][] board, String word, int level, int r, int c) {
-        if (r < 0 || r == board.length || c < 0 || c == board[0].length || board[r][c] != word.charAt(level) || visited[r][c] == true) {
+        if (r < 0 || r == board.length || c < 0 || c == board[0].length || visited[r][c] || board[r][c] != word.charAt(level)) {
             return;
         }
         if (level == word.length() - 1) {
             flag = true;
             return;
         }
+        // 把此时访问到的字母标记，并且调用函数后，又可以去标记调用的函数
         visited[r][c] = true;
         backtrack(board, word, level + 1, r + 1, c);
         backtrack(board, word, level + 1, r - 1, c);

@@ -25,12 +25,13 @@ public class Solution {
         ans = dp[0] = nums[0];
         for (int i = 1; i < n; i++) {
             //状态转移方程
-            if (dp[i - 1] < 0) {
-                dp[i] = nums[i];
-            }
-            else {
-                dp[i] = dp[i - 1] + nums[i];
-            }
+            dp[i] = Math.max(nums[i], nums[i] + dp[i - 1]);
+//            if (dp[i - 1] < 0) {
+//                dp[i] = nums[i];
+//            }
+//            else {
+//                dp[i] = dp[i - 1] + nums[i];
+//            }
             ans = Math.max(ans, dp[i]);
         }
         return ans;
